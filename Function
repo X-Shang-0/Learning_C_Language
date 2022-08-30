@@ -1,18 +1,18 @@
 函数调用示例[7-3]
 #include<stdio.h>
-int f(int a, int b)
+int f(int a, int b) //被调用函数
 {
 	int c;
-	if (a > b)
+	if (a > b) //a为3，b为3
 		c = 1;
 	else if (a == b)
 		c = 0;
 	else c = -1;
-	return c;
+	return c; //返回c的值 0
 }
 main()
 {
 	int i = 2, y;
-	y = f(i, i++);
-	printf("%d",y);
+	y = f(i, ++i); //主调函数，传递给函数 f
+	printf("%d",y); //输出y值 0
 }
