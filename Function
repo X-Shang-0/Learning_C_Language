@@ -16,3 +16,29 @@ main()
 	y = f(i, ++i); //主调函数，传递给函数 f
 	printf("%d",y); //输出y值 0
 }
+
+
+
+函数递归调用
+#define _CRT_SECURE_NO_DEPRECATE
+#include<stdio.h>
+unsigned long mul(int n)
+{
+	unsigned long p;
+	if (n > 1) //判断条件
+		p = n * mul(n - 1); //递归调用计算
+	else
+		p = 1L;
+	return(p);
+}
+
+main()
+{
+	int m;
+	puts("Calculate n! n=? \n"); //要求输入n
+	scanf("%d",&m);
+	printf("%d!=%ld\n", m, mul(m)); //求n的阶乘，调用mul函数
+	
+	
+	
+	
