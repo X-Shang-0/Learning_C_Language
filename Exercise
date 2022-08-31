@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main()
+{
+	int a[100];//存放完整约数
+	int i, j, n, m;
+	for (j = 2; j < 1000; j++)//遍历2->999
+	{
+		n = 0;
+		m = j;
+		for (i = 1; i < j; i++)//遍历约数
+		{
+			if ((j % i) == 0)//判断能否被约数整除
+			{
+				m = m - i;//减去所有约数后的值
+				a[n] = i;//约数存放处
+				n++;//增加数组存储空间
+			}
+		}
+		if (m == 0)
+		{
+			printf("%d is a wanshu\n", j);
+			for (i = 0; i < n-1 ; i++)//遍历约数数组
+				printf("%d ", a[i]);//最后一位约数前的数遍历
+			printf("%d\n", a[n-1]);//输出最后一位约数并回车
+		}
+	}
+	return 0;
+}
