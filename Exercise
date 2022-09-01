@@ -48,3 +48,23 @@ main()
 	for (k = 0; k < 3; k++)
 		printf("%d,", func(a--));
 }
+
+
+
+#include<stdio.h>
+int k = 1;
+int fun1(int x)
+{
+	return(k * x);
+}
+int fun2(int y)
+{
+	int k = 3;
+	return(y / k);
+}
+
+main()
+{
+	k--;  //全局变量k自减
+	printf("%d\n", fun1(fun2(6)));  //k=0并调用fun1和2
+}
