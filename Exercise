@@ -26,3 +26,25 @@ int main()
 	}
 	return 0;
 }
+
+
+变量的作用域和存储类别
+
+#include<stdio.h>
+int a = 5; //全局变量 第一次为5 第二次为4 第三次为3
+int func(int d)  //func函数
+{
+	int b = 5;
+	static int c = 5;  //静态变量
+	a--;
+	b--;
+	--c;
+	--d;
+	return a + b + c + d;
+}
+main()
+{
+	int k, a = 4;
+	for (k = 0; k < 3; k++)
+		printf("%d,", func(a--));
+}
