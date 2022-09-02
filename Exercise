@@ -1,3 +1,30 @@
+#include<math.h>
+main()
+{
+	int n, i, j, flag, x = 0;
+	for (i = 2; i <= 100; i++)//遍历2-100
+	{
+		flag = 1;
+		j = 2;//被除的数
+		n = (int)sqrt((double)i);//非负实数的平方根
+		while (flag && j <= n)//判断平方根是否大于被除的数
+		{
+			if (i % j == 0)//能否被2及更大数的整除
+				flag = 0;//能整除，不是素数
+			j++;//变比2大的数整
+		}
+		if (flag)//flag=1就是素数
+		{
+			printf("%d,", i);//打印素数
+			x++;//计数，有多少素数
+			if (x % 5 == 0)//五个数换一行
+				printf("\n");
+		}
+	}
+}
+
+
+
 #include <stdio.h>
 int main()
 {
@@ -26,6 +53,14 @@ int main()
 	}
 	return 0;
 }
+
+
+
+
+
+
+
+
 
 
 变量的作用域和存储类别
